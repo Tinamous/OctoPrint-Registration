@@ -252,6 +252,7 @@ $(function() {
             if (data.eventEvent == "RfidTagSeen") {
                 console.log("Registration: User tag seen. TagId:" + data.eventPayload.tagId);
                 self.registerUserViewModel.tagSeen(data.eventPayload);
+                self.updateUserViewModel.tagSeen(data.eventPayload);
             }
         };
 

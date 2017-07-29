@@ -1,0 +1,240 @@
+<!--
+<a id="navbar_register" class="pull-right" href="#whosprinting_register_dialog" data-toggle="modal" data-target="#whosprinting_register_dialog">
+    <i class="icon-paperclip"></i>
+    Register
+</a>
+-->
+
+<a id="navbar_registration_register"
+   class="pull-right"
+   href="#registration_register_dialog"
+   data-toggle="modal"
+   data-target="#registration_register_dialog"
+   data-bind="visible: notLoggedIn"
+   style="display:none">
+    Register
+</a>
+
+
+<a id="navbar_registration_update"
+   class="pull-right"
+   href="#registration_update_user_dialog"
+   data-toggle="modal"
+   data-target="#registration_update_user_dialog"
+   data-bind="visible: loginStateViewModel.isUser"
+   style="display:none">
+    User Settings
+</a>
+
+<!-- This may need to go into a tab or -->
+<!-- somehow somewhere else in the DOM -->
+<div id="registration_register_dialog" style="display:none" data-bind="with: registerUserViewModel" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">Register</h3>
+            </div>
+
+            <div class="modal-body form-horizontal">
+
+                <div class="control-group">
+                    <label class="control-label">Username</label>
+                    <div class="controls">
+                        <input type="text" data-bind="value: username" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Password</label>
+                    <div class="controls">
+                        <input type="password" data-bind="value: password" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Confirm Password</label>
+                    <div class="controls">
+                        <input type="password" data-bind="value: confirmPassword" />
+                    </div>
+                </div>
+
+                <h4>Optional Details</h4>
+                <h5>Caution: Details may be visible on the Internet</h5>
+
+                <div class="control-group">
+                    <label class="control-label">Display Name</label>
+                    <div class="controls">
+                        <input type="text" data-bind="value: displayName" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Email Address</label>
+                    <div class="controls">
+                        <input type="text" data-bind="value: emailAddress" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Contact Number</label>
+                    <div class="controls">
+                        <input type="text" data-bind="value: phoneNumber" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Twitter</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">@</span>
+                            <input class="form-control" type="text" data-bind="value: twitterUsername" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Tinamous</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">@</span>
+                            <input class="form-control" type="text" data-bind="value: tinamousUsername" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Slack</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">@</span>
+                            <input class="form-control" type="text" data-bind="value: slackUsername" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">No Photos/Videos</label>
+                    <div class="controls">
+                        <input type="checkbox" data-bind="checked: printInPrivate" />
+                        <span class="help-block">Disable plugins from publish photos/videos to the internet (e.g. Twitter).</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Key Fob</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input class="form-control input-large " type="text" data-bind="value: keyfobId" />
+                            <button class="btn btn-primary" data-bind="click: captureTag, text: captureTagText">Capture</button>
+                        </div>
+                        <span class="help-block">Click Capture and swipe your key fob on the printers sensor.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bind="click: register">Register</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+
+<div id="registration_update_user_dialog" style="display:none" data-bind="with: updateUserViewModel" class="modal fade" role="dialog">
+    <div class="modal-dialog">
+
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h3 class="modal-title">User Settings</h3>
+            </div>
+
+            <div class="modal-body form-horizontal">
+                <h5>Caution: Details may be visible on the Internet</h5>
+
+                <div class="control-group">
+                    <label class="control-label">Display Name</label>
+                    <div class="controls">
+                        <input type="text" data-bind="value: displayName" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Email Address</label>
+                    <div class="controls">
+                        <input type="text" data-bind="value: emailAddress" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Contact Number</label>
+                    <div class="controls">
+                        <input type="text" data-bind="value: phoneNumber" />
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Twitter</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">@</span>
+                            <input class="form-control" type="text" data-bind="value: twitterUsername" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Tinamous</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">@</span>
+                            <input class="form-control" type="text" data-bind="value: tinamousUsername" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Slack</label>
+                    <div class="controls">
+                        <div class="input-prepend">
+                            <span class="add-on">@</span>
+                            <input class="form-control" type="text" data-bind="value: slackUsername" />
+                        </div>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">No Photos/Videos</label>
+                    <div class="controls">
+                        <input type="checkbox" data-bind="checked: printInPrivate" />
+                        <span class="help-block">Disable plugins from publish photos/videos to the internet (e.g. Twitter).</span>
+                    </div>
+                </div>
+
+                <div class="control-group">
+                    <label class="control-label">Key Fob</label>
+                    <div class="controls">
+                        <div class="input-append">
+                            <input class="form-control input-large " type="text" data-bind="value: keyfobId" />
+                            <button class="btn btn-primary" data-bind="click: captureTag, text: captureTagText">Capture</button>
+                        </div>
+                        <span class="help-block">Click Capture and swipe your key fob on the printers sensor.</span>
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="modal-footer">
+                <button type="button" class="btn btn-success" data-bind="click: update">Update</button>
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cancel</button>
+            </div>
+
+        </div>
+
+    </div>
+</div>

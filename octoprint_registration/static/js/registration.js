@@ -167,12 +167,10 @@ $(function() {
                 phoneNumber: self.phoneNumber() || "",
                 twitter: self.twitterUsername() || "",
                 tinamous: self.tinamousUsername() || "",
-                slack: self.slackUsername() || "slack",
+                slack: self.slackUsername() || "",
                 printInPrivate: self.printInPrivate(),
                 keyfobId: self.keyfobId() || ""
             };
-
-            console.log("*** Print in private:" + self.printInPrivate());
 
             OctoPrint.simpleApiCommand(self.pluginId, "UpdateUser", updateUserPayload, {})
                 .done(function() {

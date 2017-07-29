@@ -11,13 +11,15 @@ User registration plugin. Allows people to register with the OctoPrint instance.
 * No Photos/Videos option - indicate to plugins that support this that photos/videos of the print should not be published.
 * Key Fob - Optional RFID fob id for use with Who's Printing plugin
 
-So email, twitter, tinamous, slack or other plugins could use this information to directly send the user a notification such as when the print has finished.
+These optional settings allow plugins such as email, twitter, tinamous, slack or other notifiers to use this information to directly send the user a notification such as when the print has finished.
 
 Note that when updating the user settings you need to logout and back in otherwise the cached user setting may report incorrect user settings (e.g. if you just refresh the page).
 
 User password should be changed using the existing OctoPrint User Settings dialog box.
 
-When a user is registered they are assigned the roles user and whosprinting. whosprinting role is used by the Who's Printing plugin to allow for filtering of users in the dropdown list.
+When a user is registered they are assigned the roles 'user' and 'whosprinting'.
+
+The whosprinting role is used by the Who's Printing plugin to allow for filtering of users in the dropdown list.
 
 ## Setup
 
